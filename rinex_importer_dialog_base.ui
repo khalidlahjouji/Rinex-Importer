@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RinexImporterDialog</class>
+ <widget class="QDialog" name="RinexImporterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>150</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Importer des fichiers RINEX</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="lblTitle">
+     <property name="text">
+      <string>Sélectionner un dossier contenant des fichiers RINEX :</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lblFolderPath">
+       <property name="text">
+        <string>Aucun dossier sélectionné</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSelectFolder">
+       <property name="text">
+        <string>Parcourir...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnImport">
+     <property name="text">
+      <string>Importer</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnSelectFolder</sender>
+   <signal>clicked()</signal>
+   <receiver>RinexImporterDialog</receiver>
+   <slot>select_folder()</slot>
+  </connection>
+  <connection>
+   <sender>btnImport</sender>
+   <signal>clicked()</signal>
+   <receiver>RinexImporterDialog</receiver>
+   <slot>import_data()</slot>
+  </connection>
+ </connections>
+</ui>
